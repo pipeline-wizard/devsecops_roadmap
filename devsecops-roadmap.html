@@ -3,857 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevSecOps + AI Career Roadmap</title>
+<title>DevSecOps + AI Career Roadmap — Sourav</title>
+<meta name="description" content="14-month career roadmap from Azure DevOps to DevSecOps + AI Engineer">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #07090f;
-  --surface: #0d1117;
-  --surface2: #151b27;
-  --surface3: #1a2233;
-  --border: #1e2a3a;
-  --text: #d4dce8;
-  --text-dim: #6b7a8d;
-  --text-bright: #f0f4f8;
-  --cyan: #22d3ee;
-  --blue: #3b82f6;
-  --purple: #a78bfa;
-  --green: #34d399;
-  --orange: #fb923c;
-  --red: #f87171;
-  --pink: #f472b6;
-  --yellow: #fbbf24;
-}
-
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  font-family: 'Outfit', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Ambient noise texture */
-body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: 0;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
-
-.app { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 32px 20px 80px; }
-
-/* ---- HEADER ---- */
-.hero { padding: 40px 0 12px; }
-.hero-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 14px;
-  display: flex; align-items: center; gap: 10px;
-}
-.hero-eyebrow::before {
-  content: ''; display: block; width: 24px; height: 1px; background: var(--cyan);
-}
-.hero h1 {
-  font-size: 38px; font-weight: 800; line-height: 1.15;
-  color: var(--text-bright);
-  margin-bottom: 14px;
-}
-.hero h1 span {
-  background: linear-gradient(135deg, var(--cyan), var(--purple));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hero .subtitle {
-  font-size: 16px; color: var(--text-dim); line-height: 1.65;
-  max-width: 640px;
-}
-
-/* ---- CONTEXT PANEL ---- */
-.context-panel {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;
-  margin: 28px 0 40px;
-}
-.ctx-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 18px;
-}
-.ctx-card .ctx-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 6px;
-}
-.ctx-card .ctx-value {
-  font-size: 15px; font-weight: 600; color: var(--text-bright);
-}
-.ctx-card .ctx-detail {
-  font-size: 12px; color: var(--text-dim); margin-top: 4px; line-height: 1.4;
-}
-
-/* ---- TABS ---- */
-.tabs {
-  display: flex; gap: 4px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 4px;
-  margin-bottom: 32px;
-  overflow-x: auto;
-}
-.tab {
-  flex: 1;
-  font-family: 'Outfit', sans-serif;
-  font-size: 13px; font-weight: 500;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: none;
-  background: transparent;
-  color: var(--text-dim);
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-  text-align: center;
-}
-.tab:hover { color: var(--text); background: var(--surface2); }
-.tab.active {
-  background: var(--surface3);
-  color: var(--cyan);
-  font-weight: 600;
-  box-shadow: 0 0 12px rgba(34,211,238,0.08);
-}
-
-/* ---- PHASE SECTION ---- */
-.phase { animation: fadeIn 0.35s ease; }
-@keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
-
-.phase-header {
-  display: flex; align-items: flex-start; gap: 16px;
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-}
-.phase-icon {
-  width: 48px; height: 48px; min-width: 48px;
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
-}
-.phase-meta .phase-title {
-  font-size: 22px; font-weight: 700; color: var(--text-bright);
-  margin-bottom: 4px;
-}
-.phase-meta .phase-dates {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px; color: var(--text-dim);
-}
-
-/* ---- MONTH BLOCK ---- */
-.month-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  margin-bottom: 16px;
-  overflow: hidden;
-}
-.month-header {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 16px 20px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.month-header:hover { background: var(--surface2); }
-.month-name {
-  font-size: 16px; font-weight: 600; color: var(--text-bright);
-  display: flex; align-items: center; gap: 10px;
-}
-.month-name .m-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-weight: 500;
-}
-.month-toggle {
-  font-size: 18px; color: var(--text-dim);
-  transition: transform 0.3s;
-}
-.month-toggle.open { transform: rotate(180deg); }
-
-.month-body { padding: 0 20px 20px; display: none; }
-.month-body.open { display: block; animation: fadeIn 0.3s ease; }
-
-/* WEEKLY BREAKDOWN */
-.week {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(30,42,58,0.5);
-}
-.week:last-child { border-bottom: none; }
-.week-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 10px;
-  display: flex; align-items: center; gap: 8px;
-}
-.week-label::after {
-  content: ''; flex:1; height: 1px; background: var(--border);
-}
-
-.task {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 6px 0;
-  font-size: 14px; line-height: 1.55;
-  color: var(--text);
-}
-.task .bullet {
-  min-width: 6px; width: 6px; height: 6px;
-  border-radius: 50%;
-  margin-top: 7px;
-}
-.task .time-hint {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; color: var(--text-dim);
-  white-space: nowrap;
-  margin-left: auto;
-  padding-left: 12px;
-}
-.task strong { color: var(--text-bright); font-weight: 600; }
-
-/* MILESTONE */
-.milestone {
-  margin-top: 12px;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-size: 13px; font-weight: 600;
-  display: flex; align-items: center; gap: 8px;
-}
-
-/* ---- SUMMARY STRIP ---- */
-.summary-strip {
-  margin-top: 40px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 24px;
-}
-.summary-strip h3 {
-  font-size: 17px; font-weight: 700; color: var(--text-bright);
-  margin-bottom: 16px;
-  display: flex; align-items: center; gap: 8px;
-}
-.cert-timeline {
-  display: flex; flex-direction: column; gap: 8px;
-}
-.cert-row {
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 14px;
-  background: var(--surface2);
-  border-radius: 8px;
-  font-size: 14px;
-}
-.cert-row .cert-dot {
-  width: 10px; height: 10px; min-width: 10px;
-  border-radius: 50%;
-}
-.cert-row .cert-name { font-weight: 600; color: var(--text-bright); flex:1; }
-.cert-row .cert-when {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; color: var(--text-dim);
-}
-
-/* ---- TIPS ---- */
-.tips-section {
-  margin-top: 20px;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(34,211,238,0.04), rgba(167,139,250,0.04));
-  border: 1px solid rgba(34,211,238,0.12);
-  border-radius: 14px;
-}
-.tips-section h4 {
-  font-size: 14px; font-weight: 700; color: var(--cyan);
-  margin-bottom: 12px;
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 0.5px;
-}
-.tip {
-  font-size: 13px; line-height: 1.6; color: var(--text-dim);
-  padding: 5px 0;
-  padding-left: 16px;
-  position: relative;
-}
-.tip::before {
-  content: '→'; position: absolute; left: 0; color: var(--cyan);
-}
-
-@media (max-width: 640px) {
-  .hero h1 { font-size: 28px; }
-  .context-panel { grid-template-columns: 1fr; }
-  .tabs { gap: 2px; }
-  .tab { font-size: 11px; padding: 8px 6px; }
-  .month-header { padding: 14px 16px; }
-  .month-body { padding: 0 16px 16px; }
-}
+:root{--bg:#07090f;--surface:#0d1117;--s2:#151b27;--s3:#1a2233;--s4:#212d42;--border:#1e2a3a;--border2:#2a3a4f;--text:#d4dce8;--dim:#6b7a8d;--bright:#f0f4f8;--cyan:#22d3ee;--blue:#3b82f6;--purple:#a78bfa;--green:#34d399;--orange:#fb923c;--red:#f87171;--pink:#f472b6;--yellow:#fbbf24;--font:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:0;opacity:.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none}
+a{color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(34,211,238,.25);transition:all .2s}
+a:hover{border-bottom-color:var(--cyan);opacity:.85}
+.app{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:32px 20px 100px}
+.topnav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);margin:0 -20px;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.topnav-title{font-size:14px;font-weight:600;color:var(--bright);display:flex;align-items:center;gap:8px}
+.topnav-title span{font-size:16px}
+.topnav-actions{display:flex;gap:8px}
+.nav-btn{font-family:var(--mono);font-size:10px;letter-spacing:.5px;padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--dim);cursor:pointer;transition:all .2s;text-transform:uppercase}
+.nav-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero{padding:56px 0 16px}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--cyan)}
+.hero h1{font-size:40px;font-weight:800;line-height:1.12;color:var(--bright);margin-bottom:14px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:16px;color:var(--dim);line-height:1.7;max-width:660px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0 20px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.stat .s-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.stat .s-val{font-size:17px;font-weight:700;color:var(--bright)}
+.stat .s-sub{font-size:11px;color:var(--dim);margin-top:3px;line-height:1.4}
+.schedule-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:28px}
+.schedule-panel h3{font-size:15px;font-weight:700;color:var(--bright);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.sched-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sched-block{background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.sched-block .sb-title{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+.sb-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:4px 0;color:var(--text)}
+.sb-row .sb-time{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.sb-divider{height:1px;background:var(--border);margin:6px 0}
+.progress-overview{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:32px}
+.progress-overview h3{font-size:15px;font-weight:700;color:var(--bright);margin-bottom:4px}
+.progress-overview .po-sub{font-size:12px;color:var(--dim);margin-bottom:16px}
+.po-bar-track{height:8px;background:var(--s2);border-radius:99px;overflow:hidden;margin-bottom:12px}
+.po-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),var(--cyan),var(--purple));transition:width .6s ease}
+.po-phases{display:flex;gap:6px;flex-wrap:wrap}
+.po-phase{font-size:11px;padding:4px 10px;border-radius:6px;font-weight:500;border:1px solid var(--border);background:var(--s2);color:var(--dim);transition:all .3s}
+.po-phase.done{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.25);color:var(--green)}
+.po-phase.current{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}50%{box-shadow:0 0 0 4px rgba(34,211,238,.12)}}
+.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px;margin-bottom:28px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{height:0}
+.tab{flex:1;font-family:var(--font);font-size:12px;font-weight:500;padding:10px 8px;border-radius:8px;border:none;background:transparent;color:var(--dim);cursor:pointer;transition:all .2s;white-space:nowrap;text-align:center;min-width:0}
+.tab:hover{color:var(--text);background:var(--s2)}
+.tab.active{background:var(--s3);color:var(--cyan);font-weight:600;box-shadow:0 0 12px rgba(34,211,238,.06)}
+.phase{animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.phase-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.phase-icon{width:50px;height:50px;min-width:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.phase-meta .p-title{font-size:22px;font-weight:700;color:var(--bright);margin-bottom:3px}
+.phase-meta .p-dates{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.phase-meta .p-desc{font-size:13px;color:var(--dim);margin-top:6px;line-height:1.55;max-width:600px}
+.exam-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:20px}
+.ei-card{background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.ei-card .ei-label{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+.ei-card .ei-val{font-size:14px;font-weight:600;color:var(--bright)}
+.controls{display:flex;gap:8px;margin-bottom:16px;justify-content:flex-end}
+.ctrl-btn{font-family:var(--mono);font-size:10px;padding:5px 10px;border-radius:5px;border:1px solid var(--border);background:var(--s2);color:var(--dim);cursor:pointer;transition:all .2s}
+.ctrl-btn:hover{color:var(--cyan);border-color:var(--cyan)}
+.month-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden}
+.month-header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;cursor:pointer;transition:background .2s}
+.month-header:hover{background:var(--s2)}
+.month-name{font-size:15px;font-weight:600;color:var(--bright);display:flex;align-items:center;gap:10px}
+.m-tag{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:5px;font-weight:500}
+.m-right{display:flex;align-items:center;gap:10px}
+.m-progress{font-family:var(--mono);font-size:10px;color:var(--dim)}
+.month-toggle{font-size:16px;color:var(--dim);transition:transform .3s}
+.month-toggle.open{transform:rotate(180deg)}
+.month-body{padding:0 20px 18px;display:none}
+.month-body.open{display:block;animation:fadeIn .25s ease}
+.week{padding:12px 0;border-bottom:1px solid rgba(30,42,58,.4)}
+.week:last-child{border-bottom:none}
+.week-label{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.week-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.task{display:flex;align-items:flex-start;gap:10px;padding:5px 0;font-size:13.5px;line-height:1.6;color:var(--text);transition:opacity .2s}
+.task.completed{opacity:.45}
+.task.completed .t-content{text-decoration:line-through;text-decoration-color:var(--dim)}
+.task .chk{min-width:18px;width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border);background:var(--s2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:2px;flex-shrink:0}
+.task .chk:hover{border-color:var(--cyan)}
+.task .chk.checked{background:rgba(52,211,153,.15);border-color:var(--green)}
+.task .chk.checked::after{content:'✓';font-size:11px;color:var(--green);font-weight:700}
+.task .t-content{flex:1}
+.task strong{color:var(--bright);font-weight:600}
+.task .t-time{font-family:var(--mono);font-size:10px;color:var(--dim);white-space:nowrap;margin-left:auto;padding-left:10px;margin-top:3px;flex-shrink:0}
+.task .t-type{font-family:var(--mono);font-size:9px;letter-spacing:.5px;text-transform:uppercase;padding:2px 6px;border-radius:4px;margin-right:6px;font-weight:500;vertical-align:middle}
+.t-study{background:rgba(59,130,246,.12);color:var(--blue)}
+.t-lab{background:rgba(251,146,60,.12);color:var(--orange)}
+.t-exam{background:rgba(248,113,113,.12);color:var(--red)}
+.t-project{background:rgba(167,139,250,.12);color:var(--purple)}
+.t-review{background:rgba(52,211,153,.12);color:var(--green)}
+.resources{margin-top:14px;padding:14px 16px;background:var(--s2);border:1px solid var(--border);border-radius:10px}
+.resources .r-title{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+.r-link{display:block;font-size:12.5px;padding:3px 0;color:var(--text);line-height:1.5}
+.r-link a{font-weight:500}
+.r-link .r-tag{font-family:var(--mono);font-size:9px;color:var(--dim);margin-left:4px}
+.milestone{margin-top:12px;padding:12px 16px;border-radius:10px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.summary-strip{margin-top:36px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px}
+.summary-strip h3{font-size:16px;font-weight:700;color:var(--bright);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.cert-tl{display:flex;flex-direction:column;gap:8px}
+.cert-row{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--s2);border-radius:8px;font-size:13px;border:1px solid var(--border)}
+.cert-row .c-dot{width:10px;height:10px;min-width:10px;border-radius:50%}
+.cert-row .c-name{font-weight:600;color:var(--bright);flex:1}
+.cert-row .c-cost{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.cert-row .c-when{font-family:var(--mono);font-size:11px;color:var(--dim);text-align:right;min-width:65px}
+.linkedin-section{margin-top:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px}
+.linkedin-section h3{font-size:16px;font-weight:700;color:var(--bright);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.li-row{padding:10px 14px;background:var(--s2);border-radius:8px;margin-bottom:8px;border:1px solid var(--border)}
+.li-when{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
+.li-text{font-size:13px;color:var(--bright);font-weight:500;line-height:1.5}
+.tips{margin-top:16px;padding:20px;background:linear-gradient(135deg,rgba(34,211,238,.03),rgba(167,139,250,.03));border:1px solid rgba(34,211,238,.1);border-radius:14px}
+.tips h4{font-size:13px;font-weight:700;color:var(--cyan);margin-bottom:12px;font-family:var(--mono);letter-spacing:.5px}
+.tip{font-size:12.5px;line-height:1.6;color:var(--dim);padding:4px 0 4px 16px;position:relative}
+.tip::before{content:'→';position:absolute;left:0;color:var(--cyan)}
+.scroll-top{position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--dim);font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;transition:all .2s}
+.scroll-top:hover{border-color:var(--cyan);color:var(--cyan)}
+.scroll-top.visible{display:flex}
+@media print{body{background:#fff;color:#222}body::before{display:none}.topnav,.tabs,.controls,.scroll-top,.nav-btn,.chk{display:none!important}.app{max-width:100%;padding:20px}.month-body{display:block!important}*{color:#222!important;background:transparent!important;border-color:#ddd!important;box-shadow:none!important;-webkit-text-fill-color:#222!important}a{color:#0066cc!important}.phase{break-inside:avoid}}
+@media(max-width:640px){.hero h1{font-size:28px}.stats{grid-template-columns:1fr 1fr}.sched-grid{grid-template-columns:1fr}.tabs{gap:2px}.tab{font-size:10px;padding:8px 4px}.exam-info{grid-template-columns:1fr 1fr}.month-header{padding:12px 14px}.month-body{padding:0 14px 14px}.topnav-title{font-size:12px}}
 </style>
 </head>
 <body>
 <div class="app" id="app">
-
-<!-- HERO -->
+<div class="topnav">
+  <div class="topnav-title"><span>🚀</span> DevSecOps + AI Roadmap</div>
+  <div class="topnav-actions">
+    <button class="nav-btn" onclick="resetProgress()" title="Reset all checkboxes">Reset</button>
+    <button class="nav-btn" onclick="window.print()" title="Print or save as PDF">Print</button>
+  </div>
+</div>
 <div class="hero">
-  <div class="hero-eyebrow">Career Roadmap 2026–2027</div>
-  <h1>From Azure DevOps<br>to <span>DevSecOps + AI</span></h1>
-  <div class="subtitle">A realistic 14-month study plan built around your Deloitte schedule — mornings before work, focused weekend sessions, and strategic use of project downtime.</div>
+  <div class="hero-eyebrow">Sourav · Career Roadmap 2026–2027</div>
+  <h1>From Azure DevOps<br>to <em>DevSecOps + AI</em></h1>
+  <div class="sub">A 14-month study plan built around your 12–9 PM Deloitte schedule. Mornings before work, focused weekend sessions, and buffer weeks for client escalations. Every resource link, every week planned out, progress tracked.</div>
 </div>
-
-<!-- CONTEXT -->
-<div class="context-panel">
-  <div class="ctx-card">
-    <div class="ctx-label">Study windows</div>
-    <div class="ctx-value">~10 hrs/week</div>
-    <div class="ctx-detail">Weekday mornings (1–1.5h) + Weekends (3–4h Sat/Sun)</div>
-  </div>
-  <div class="ctx-card">
-    <div class="ctx-label">Starting certs</div>
-    <div class="ctx-value">AZ-900, 104, 400</div>
-    <div class="ctx-detail">Strong Azure + DevOps foundation already in place</div>
-  </div>
-  <div class="ctx-card">
-    <div class="ctx-label">Target role</div>
-    <div class="ctx-value">DevSecOps + AI</div>
-    <div class="ctx-detail">Security-first pipelines with AI literacy</div>
+<div class="stats">
+  <div class="stat"><div class="s-label">Duration</div><div class="s-val">14 months</div><div class="s-sub">Apr 2026 → Jun 2027</div></div>
+  <div class="stat"><div class="s-label">Weekly hours</div><div class="s-val">~10 hrs</div><div class="s-sub">Mornings + weekends</div></div>
+  <div class="stat"><div class="s-label">Certifications</div><div class="s-val">5 exams</div><div class="s-sub">+ hands-on portfolio</div></div>
+  <div class="stat"><div class="s-label">Foundation</div><div class="s-val">3× Azure</div><div class="s-sub">AZ-900, 104, 400</div></div>
+</div>
+<div class="schedule-panel">
+  <h3>⏰ Your Study Schedule Template</h3>
+  <div class="sched-grid">
+    <div class="sched-block">
+      <div class="sb-title">Weekdays (Mon–Fri)</div>
+      <div class="sb-row"><span>☀️ Wake up & morning routine</span><span class="sb-time">8:30 AM</span></div>
+      <div class="sb-row"><span>📚 Focused study session</span><span class="sb-time">9:00–10:30</span></div>
+      <div class="sb-row"><span>🍳 Prep & commute</span><span class="sb-time">10:30–11:45</span></div>
+      <div class="sb-row"><span>💼 Deloitte shift</span><span class="sb-time">12:00–9/10 PM</span></div>
+      <div class="sb-divider"></div>
+      <div class="sb-row" style="font-size:11px;color:var(--dim)"><span>⚡ ~1.5h × 5 = 7.5h/week</span></div>
+    </div>
+    <div class="sched-block">
+      <div class="sb-title">Weekends (Sat–Sun)</div>
+      <div class="sb-row"><span>☀️ Wake up naturally</span><span class="sb-time">~9:00 AM</span></div>
+      <div class="sb-row"><span>📚 Deep study / labs</span><span class="sb-time">10:00–1:00</span></div>
+      <div class="sb-row"><span>🏍️ Break / personal time</span><span class="sb-time">1:00–3:00 PM</span></div>
+      <div class="sb-row"><span>📝 Light review (optional)</span><span class="sb-time">3:00–4:00 PM</span></div>
+      <div class="sb-divider"></div>
+      <div class="sb-row" style="font-size:11px;color:var(--dim)"><span>⚡ ~3–4h × 2 = 6–8h</span></div>
+    </div>
   </div>
 </div>
-
-<!-- TABS -->
-<div class="tabs" id="tabs">
-  <button class="tab active" onclick="showPhase(0)">Phase 1 · SC-900</button>
-  <button class="tab" onclick="showPhase(1)">Phase 2 · AZ-500</button>
-  <button class="tab" onclick="showPhase(2)">Phase 3 · Hands-on</button>
-  <button class="tab" onclick="showPhase(3)">Phase 4 · AI-900</button>
-  <button class="tab" onclick="showPhase(4)">Phase 5 · AI-102</button>
-  <button class="tab" onclick="showPhase(5)">Phase 6 · SC-100</button>
+<div class="progress-overview">
+  <h3>📊 Overall Progress — <span id="progress-pct">0%</span></h3>
+  <div class="po-sub">Check off tasks as you complete them. Progress saves in your browser automatically.</div>
+  <div class="po-bar-track"><div class="po-bar-fill" id="progress-bar" style="width:0%"></div></div>
+  <div class="po-phases" id="phase-pills"></div>
 </div>
-
-<!-- PHASES -->
+<div class="tabs" id="tabs"></div>
 <div id="phases"></div>
-
-<!-- CERT TIMELINE -->
 <div class="summary-strip">
-  <h3>🎯 Certification Timeline</h3>
-  <div class="cert-timeline">
-    <div class="cert-row"><div class="cert-dot" style="background:var(--green)"></div><span class="cert-name">SC-900 — Security Fundamentals</span><span class="cert-when">May 2026</span></div>
-    <div class="cert-row"><div class="cert-dot" style="background:var(--blue)"></div><span class="cert-name">AZ-500 — Azure Security Engineer</span><span class="cert-when">Aug 2026</span></div>
-    <div class="cert-row"><div class="cert-dot" style="background:var(--orange)"></div><span class="cert-name">Hands-on DevSecOps Portfolio</span><span class="cert-when">Oct 2026</span></div>
-    <div class="cert-row"><div class="cert-dot" style="background:var(--purple)"></div><span class="cert-name">AI-900 — Azure AI Fundamentals</span><span class="cert-when">Nov 2026</span></div>
-    <div class="cert-row"><div class="cert-dot" style="background:var(--pink)"></div><span class="cert-name">AI-102 — Azure AI Engineer</span><span class="cert-when">Feb 2027</span></div>
-    <div class="cert-row"><div class="cert-dot" style="background:var(--cyan)"></div><span class="cert-name">SC-100 — Cybersecurity Architect</span><span class="cert-when">Jun 2027</span></div>
+  <h3>🎯 Certification Timeline & Costs</h3>
+  <div class="cert-tl">
+    <div class="cert-row"><div class="c-dot" style="background:var(--green)"></div><span class="c-name">SC-900 — Security Fundamentals</span><span class="c-cost">~$99</span><span class="c-when">May 2026</span></div>
+    <div class="cert-row"><div class="c-dot" style="background:var(--blue)"></div><span class="c-name">AZ-500 — Security Engineer Associate</span><span class="c-cost">~$165</span><span class="c-when">Aug 2026</span></div>
+    <div class="cert-row"><div class="c-dot" style="background:var(--orange)"></div><span class="c-name">Hands-on DevSecOps Portfolio</span><span class="c-cost">Free</span><span class="c-when">Oct 2026</span></div>
+    <div class="cert-row"><div class="c-dot" style="background:var(--purple)"></div><span class="c-name">AI-900 — Azure AI Fundamentals</span><span class="c-cost">~$99</span><span class="c-when">Nov 2026</span></div>
+    <div class="cert-row"><div class="c-dot" style="background:var(--pink)"></div><span class="c-name">AI-102 — Azure AI Engineer Associate</span><span class="c-cost">~$165</span><span class="c-when">Feb 2027</span></div>
+    <div class="cert-row"><div class="c-dot" style="background:var(--cyan)"></div><span class="c-name">SC-100 — Cybersecurity Architect Expert</span><span class="c-cost">~$165</span><span class="c-when">Jun 2027</span></div>
   </div>
+  <div style="font-size:11px;color:var(--dim);margin-top:12px;font-family:var(--mono)">Total: ~$693 USD · Check Deloitte ESA/cert reimbursement — you may get full coverage.</div>
 </div>
-
-<!-- TIPS -->
-<div class="tips-section">
-  <h4>Deloitte-Specific Tips</h4>
-  <div class="tip">Use Deloitte University (DU) and internal learning platforms — many Microsoft certs have subsidized vouchers or free attempts through the partnership.</div>
-  <div class="tip">Volunteer for client engagements involving Azure security or AI — real project hours count more than lab time and you get paid to learn.</div>
-  <div class="tip">Log certifications in DTTL Skills Profiler and update your Staffing Profile — managers use this for project staffing decisions.</div>
-  <div class="tip">Mornings before your noon shift are golden — study when your brain is fresh. Don't try to study after a 10 PM logout.</div>
-  <div class="tip">Build buffer weeks before exams. Consulting is unpredictable — client escalations happen. Every phase here has 1–2 weeks of slack built in.</div>
+<div class="linkedin-section">
+  <h3>💼 LinkedIn Headline Evolution</h3>
+  <div class="li-row"><div class="li-when">Now (Apr 2026)</div><div class="li-text">Managed Systems Engineer I @ Deloitte | 3× Azure Certified (AZ-900, AZ-104, AZ-400) | DevOps & SRE</div></div>
+  <div class="li-row"><div class="li-when">After SC-900 + AZ-500 (Aug 2026)</div><div class="li-text">DevSecOps Engineer @ Deloitte | 5× Microsoft Certified | Azure Security + CI/CD Pipelines | SRE</div></div>
+  <div class="li-row"><div class="li-when">After AI-102 (Feb 2027)</div><div class="li-text">DevSecOps & AI Engineer @ Deloitte | 7× Microsoft Certified | Securing Cloud-Native + AI Workloads</div></div>
+  <div class="li-row"><div class="li-when">After SC-100 (Jun 2027)</div><div class="li-text">Cybersecurity Architect & DevSecOps Lead @ Deloitte | 8× Microsoft Certified | AI Security Specialist</div></div>
+</div>
+<div class="tips">
+  <h4>🏢 Deloitte-Specific Tips</h4>
+  <div class="tip">Check Deloitte's Enterprise Subscription Agreement (ESA) with Microsoft — many certs have subsidized or free vouchers. Ask your People Leader or L&D contact.</div>
+  <div class="tip">Volunteer for client engagements involving Azure security or AI. Real project hours count more than lab time, and you're getting paid to learn.</div>
+  <div class="tip">Log every certification in DTTL Skills Profiler and update your Staffing Profile immediately — managers use these for project staffing decisions.</div>
+  <div class="tip">Mornings before your noon shift are sacred study time. Study when your brain is fresh. Never try to study after a 10 PM logout — it doesn't stick.</div>
+  <div class="tip">Every phase has 1–2 buffer weeks built in for client escalations. If a phase goes smoothly, use the buffer for extra hands-on labs.</div>
   <div class="tip">Connect with the Cyber & Strategic Risk practice internally — they run study groups and have architects who mentor for AZ-500 and SC-100.</div>
+  <div class="tip">When you finish the DevSecOps portfolio phase, propose your pipeline security templates as a Deloitte internal accelerator — great visibility with leadership.</div>
+  <div class="tip">After SC-100, you'll be positioned for Senior Consultant or a lateral move into the Cyber practice. Start that conversation around month 10.</div>
 </div>
-
 </div>
-
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>
-const PHASES = [
-  {
-    title: "SC-900 — Security Fundamentals",
-    dates: "Apr 2026 → May 2026 (5 weeks)",
-    icon: "🛡️",
-    iconBg: "rgba(52,211,153,0.12)",
-    iconBorder: "rgba(52,211,153,0.25)",
-    color: "var(--green)",
-    months: [
-      {
-        name: "April 2026 (Remaining)",
-        tag: "Foundation", tagColor: "rgba(52,211,153,0.12)", tagText: "var(--green)",
-        open: true,
-        weeks: [
-          {
-            label: "Week 1 (Apr 7–13)",
-            tasks: [
-              { text: "MS Learn: <strong>Describe security & compliance concepts</strong> — Zero Trust, shared responsibility, defense-in-depth, CIA triad", time: "6h", color: "var(--green)" },
-              { text: "Take the SC-900 practice quiz (the one we just built) — identify cold spots", time: "1h", color: "var(--green)" },
-              { text: "Flashcards: Create Anki deck for key terms (you'll reuse this habit for every cert)", time: "1h", color: "var(--green)" },
-            ]
-          },
-          {
-            label: "Week 2 (Apr 14–20)",
-            tasks: [
-              { text: "MS Learn: <strong>Describe Microsoft Entra capabilities</strong> — Conditional Access, PIM, SSPR, ID Protection, External ID", time: "6h", color: "var(--green)" },
-              { text: "Hands-on: Set up a free Entra ID tenant, configure a Conditional Access policy, test SSPR", time: "2h", color: "var(--green)" },
-              { text: "Review: Map Entra concepts to what you already know from AZ-104 (RBAC, managed identities)", time: "1h", color: "var(--green)" },
-            ]
-          },
-          {
-            label: "Week 3 (Apr 21–27)",
-            tasks: [
-              { text: "MS Learn: <strong>Describe Microsoft security solutions</strong> — Sentinel, Defender suite (Endpoint, Identity, O365, Cloud Apps), Secure Score", time: "6h", color: "var(--green)" },
-              { text: "MS Learn: <strong>Describe Microsoft compliance solutions</strong> — Purview, DLP, sensitivity labels, eDiscovery, Insider Risk, Priva", time: "4h", color: "var(--green)" },
-            ]
-          }
-        ]
-      },
-      {
-        name: "May 2026",
-        tag: "Exam prep", tagColor: "rgba(52,211,153,0.12)", tagText: "var(--green)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 4 (Apr 28 – May 4)",
-            tasks: [
-              { text: "Full review pass: revisit all 4 domains, focus heavily on <strong>Compliance (Purview)</strong> — this is the curveball domain", time: "5h", color: "var(--green)" },
-              { text: "Practice exams: MeasureUp or Whizlabs SC-900 — aim for 85%+ on practice tests", time: "3h", color: "var(--green)" },
-              { text: "Revisit weak areas from practice quiz — drill Priva, Customer Lockbox, Information Barriers", time: "2h", color: "var(--green)" },
-            ]
-          },
-          {
-            label: "Week 5 (May 5–11)",
-            tasks: [
-              { text: "Light review only — skim notes and flashcards, no new material", time: "3h", color: "var(--green)" },
-              { text: "<strong>🎯 EXAM DAY: SC-900</strong> — Schedule for Sat May 9 or a weekday morning before shift", time: "2h", color: "var(--green)" },
-            ],
-            milestone: { text: "SC-900 ✓ — 4th Microsoft Certification", bg: "rgba(52,211,153,0.08)", border: "rgba(52,211,153,0.2)", color: "var(--green)" }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    title: "AZ-500 — Azure Security Engineer",
-    dates: "May 2026 → Aug 2026 (12 weeks)",
-    icon: "🔐",
-    iconBg: "rgba(59,130,246,0.12)",
-    iconBorder: "rgba(59,130,246,0.25)",
-    color: "var(--blue)",
-    months: [
-      {
-        name: "May 2026 (Post SC-900)",
-        tag: "Ramp-up", tagColor: "rgba(59,130,246,0.12)", tagText: "var(--blue)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 1–2 (May 12–25)",
-            tasks: [
-              { text: "MS Learn: <strong>Manage identity and access</strong> — Entra ID (deep), MFA, Conditional Access (policy design), PIM (advanced), App registrations", time: "10h", color: "var(--blue)" },
-              { text: "Hands-on lab: Configure PIM role activation, build multi-condition CA policies in your test tenant", time: "3h", color: "var(--blue)" },
-              { text: "Key difference from SC-900: AZ-500 expects you to <strong>configure</strong>, not just describe. Practice in the portal.", time: "—", color: "var(--blue)" },
-            ]
-          },
-          {
-            label: "Week 3 (May 26–Jun 1)",
-            tasks: [
-              { text: "MS Learn: <strong>Secure networking</strong> — NSGs, ASGs, Azure Firewall, Azure Front Door, Private Link, Service Endpoints, Bastion", time: "6h", color: "var(--blue)" },
-              { text: "Hands-on: Deploy a hub-spoke VNet with NSG rules, Azure Firewall, and Bastion — your AZ-104 networking will help here", time: "3h", color: "var(--blue)" },
-            ]
-          }
-        ]
-      },
-      {
-        name: "June 2026",
-        tag: "Core domains", tagColor: "rgba(59,130,246,0.12)", tagText: "var(--blue)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 4–5 (Jun 1–15)",
-            tasks: [
-              { text: "MS Learn: <strong>Secure compute, storage, and databases</strong> — VM security, AKS security, Key Vault, Storage encryption, SQL security baselines", time: "10h", color: "var(--blue)" },
-              { text: "Hands-on: Configure Key Vault access policies, enable Defender for Storage, set up SQL auditing", time: "3h", color: "var(--blue)" },
-              { text: "AZ-400 crossover: Think about how these security configs would plug into your CI/CD pipelines (Key Vault in YAML, secret scanning)", time: "1h", color: "var(--blue)" },
-            ]
-          },
-          {
-            label: "Week 6–7 (Jun 15–29)",
-            tasks: [
-              { text: "MS Learn: <strong>Manage security operations</strong> — Microsoft Sentinel (deep), Defender for Cloud, Defender for Endpoint, Log Analytics, KQL basics", time: "10h", color: "var(--blue)" },
-              { text: "Hands-on: Deploy Sentinel workspace, connect data connectors, write 3–4 basic KQL queries, create an analytics rule", time: "4h", color: "var(--blue)" },
-              { text: "Learn KQL fundamentals — this skill carries into SC-100 and real-world SOC work", time: "2h", color: "var(--blue)" },
-            ]
-          }
-        ]
-      },
-      {
-        name: "July 2026",
-        tag: "Deep dive + labs", tagColor: "rgba(59,130,246,0.12)", tagText: "var(--blue)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 8–9 (Jun 30 – Jul 13)",
-            tasks: [
-              { text: "Revisit weakest domain from progress checks — most people struggle with <strong>Secure Networking</strong> or <strong>Security Operations</strong>", time: "8h", color: "var(--blue)" },
-              { text: "MS Learn sandbox labs: Complete ALL AZ-500 interactive labs (they simulate the exam environment)", time: "4h", color: "var(--blue)" },
-              { text: "Watch John Savill's AZ-500 study cram on YouTube — excellent for visual learners and gap-filling", time: "3h", color: "var(--blue)" },
-            ]
-          },
-          {
-            label: "Week 10 (Jul 14–20) — Buffer",
-            tasks: [
-              { text: "Buffer week for Deloitte project crunches — use this to catch up if you fell behind", time: "flex", color: "var(--blue)" },
-              { text: "If on track: Start MeasureUp AZ-500 practice exams — aim for 80%+ before scheduling the real exam", time: "4h", color: "var(--blue)" },
-            ]
-          }
-        ]
-      },
-      {
-        name: "August 2026",
-        tag: "Exam sprint", tagColor: "rgba(59,130,246,0.12)", tagText: "var(--blue)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 11 (Jul 21 – Aug 2)",
-            tasks: [
-              { text: "Practice exams: Complete 2–3 full practice tests. Review every wrong answer. Build a \"mistake log\"", time: "6h", color: "var(--blue)" },
-              { text: "Drill: Key Vault scenarios, Sentinel KQL queries, CA policy edge cases, Defender for Cloud recommendations", time: "4h", color: "var(--blue)" },
-            ]
-          },
-          {
-            label: "Week 12 (Aug 3–9)",
-            tasks: [
-              { text: "Light review — flashcards, mistake log, skim notes", time: "3h", color: "var(--blue)" },
-              { text: "<strong>🎯 EXAM DAY: AZ-500</strong> — Schedule for Sat Aug 8 or weekday morning", time: "3h", color: "var(--blue)" },
-            ],
-            milestone: { text: "AZ-500 ✓ — Azure Security Engineer Associate", bg: "rgba(59,130,246,0.08)", border: "rgba(59,130,246,0.2)", color: "var(--blue)" }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    title: "Hands-on DevSecOps Portfolio",
-    dates: "Aug 2026 → Oct 2026 (8 weeks)",
-    icon: "⚙️",
-    iconBg: "rgba(251,146,60,0.12)",
-    iconBorder: "rgba(251,146,60,0.25)",
-    color: "var(--orange)",
-    months: [
-      {
-        name: "Aug – Sep 2026",
-        tag: "Build skills", tagColor: "rgba(251,146,60,0.12)", tagText: "var(--orange)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 1–2: Secure Pipelines",
-            tasks: [
-              { text: "<strong>Integrate security gates into Azure DevOps YAML pipelines</strong> — SAST (SonarQube/Checkmarx), DAST (OWASP ZAP), dependency scanning (Snyk/Dependabot)", time: "8h", color: "var(--orange)" },
-              { text: "Build on your existing Salesforce CLI Scanner integration — extend it with fail-on-severity thresholds and PR decoration", time: "3h", color: "var(--orange)" },
-              { text: "Set up Key Vault integration in pipelines for secret management — zero hardcoded secrets", time: "2h", color: "var(--orange)" },
-            ]
-          },
-          {
-            label: "Week 3–4: IaC Security",
-            tasks: [
-              { text: "Learn <strong>Checkov</strong> and <strong>tfsec/trivy</strong> for scanning Bicep/Terraform templates — integrate into pre-commit hooks and CI", time: "6h", color: "var(--orange)" },
-              { text: "Build a reference pipeline: Bicep deploy → Checkov scan → approval gate → deploy to staging → DAST scan → production", time: "4h", color: "var(--orange)" },
-              { text: "Document the architecture as a reusable template — this becomes a Deloitte accelerator you can propose to clients", time: "2h", color: "var(--orange)" },
-            ]
-          },
-          {
-            label: "Week 5–6: Container Security",
-            tasks: [
-              { text: "Learn <strong>Defender for Containers</strong> and <strong>Trivy</strong> for image scanning in ACR", time: "5h", color: "var(--orange)" },
-              { text: "Build a secure AKS deployment pipeline: image build → scan → sign (Notary) → deploy with admission controller policies", time: "5h", color: "var(--orange)" },
-              { text: "Explore <strong>GitHub Advanced Security</strong> — CodeQL, secret scanning, dependency review in GitHub Actions (the market is shifting here)", time: "3h", color: "var(--orange)" },
-            ]
-          },
-          {
-            label: "Week 7–8: Portfolio & Visibility",
-            tasks: [
-              { text: "Create a <strong>GitHub portfolio repo</strong> with your reference architectures, pipeline templates, and documentation", time: "4h", color: "var(--orange)" },
-              { text: "Write a LinkedIn article: \"Shifting Security Left in Azure DevOps\" — share your pipeline security pattern. Great for Deloitte visibility too.", time: "3h", color: "var(--orange)" },
-              { text: "Optional: Pursue <strong>GitHub Advanced Security Certification</strong> if you found the tooling compelling", time: "flex", color: "var(--orange)" },
-            ],
-            milestone: { text: "DevSecOps Portfolio Complete — Real-world skills ready", bg: "rgba(251,146,60,0.08)", border: "rgba(251,146,60,0.2)", color: "var(--orange)" }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    title: "AI-900 — Azure AI Fundamentals",
-    dates: "Oct 2026 → Nov 2026 (4 weeks)",
-    icon: "🤖",
-    iconBg: "rgba(167,139,250,0.12)",
-    iconBorder: "rgba(167,139,250,0.25)",
-    color: "var(--purple)",
-    months: [
-      {
-        name: "Oct – Nov 2026",
-        tag: "Quick cert", tagColor: "rgba(167,139,250,0.12)", tagText: "var(--purple)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 1 (Oct 12–18)",
-            tasks: [
-              { text: "MS Learn: <strong>AI workloads & considerations</strong> — ML, anomaly detection, computer vision, NLP, generative AI fundamentals", time: "5h", color: "var(--purple)" },
-              { text: "MS Learn: <strong>Fundamentals of machine learning</strong> — regression, classification, clustering, deep learning basics", time: "3h", color: "var(--purple)" },
-            ]
-          },
-          {
-            label: "Week 2 (Oct 19–25)",
-            tasks: [
-              { text: "MS Learn: <strong>Azure AI services</strong> — Azure OpenAI, Cognitive Services (Vision, Speech, Language), Azure Machine Learning, Document Intelligence", time: "6h", color: "var(--purple)" },
-              { text: "Hands-on: Deploy an Azure OpenAI resource, try a basic completion. Test the Vision API with a sample image.", time: "2h", color: "var(--purple)" },
-            ]
-          },
-          {
-            label: "Week 3 (Oct 26 – Nov 1)",
-            tasks: [
-              { text: "MS Learn: <strong>Responsible AI principles</strong> — fairness, reliability, privacy, inclusiveness, transparency, accountability", time: "3h", color: "var(--purple)" },
-              { text: "Practice exams: This is a fundamentals exam — 2 practice tests should be enough. Aim for 85%+", time: "3h", color: "var(--purple)" },
-            ]
-          },
-          {
-            label: "Week 4 (Nov 2–8)",
-            tasks: [
-              { text: "Quick review — flashcards and weak spots only", time: "2h", color: "var(--purple)" },
-              { text: "<strong>🎯 EXAM DAY: AI-900</strong> — This should feel light after AZ-500. Schedule confidently.", time: "2h", color: "var(--purple)" },
-            ],
-            milestone: { text: "AI-900 ✓ — AI Fundamentals locked in", bg: "rgba(167,139,250,0.08)", border: "rgba(167,139,250,0.2)", color: "var(--purple)" }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    title: "AI-102 — Azure AI Engineer Associate",
-    dates: "Nov 2026 → Feb 2027 (12 weeks)",
-    icon: "🧠",
-    iconBg: "rgba(244,114,182,0.12)",
-    iconBorder: "rgba(244,114,182,0.25)",
-    color: "var(--pink)",
-    months: [
-      {
-        name: "November 2026",
-        tag: "Foundations", tagColor: "rgba(244,114,182,0.12)", tagText: "var(--pink)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 1–2 (Nov 10–23)",
-            tasks: [
-              { text: "MS Learn: <strong>Plan and manage Azure AI solutions</strong> — AI services architecture, responsible AI implementation, resource management", time: "6h", color: "var(--pink)" },
-              { text: "MS Learn: <strong>Azure OpenAI Service</strong> — prompt engineering, fine-tuning, embeddings, RAG pattern fundamentals", time: "6h", color: "var(--pink)" },
-              { text: "Hands-on: Build a basic RAG chatbot using Azure OpenAI + Azure AI Search (this is the hot skill right now)", time: "4h", color: "var(--pink)" },
-            ]
-          },
-          {
-            label: "Week 3–4 (Nov 24 – Dec 7)",
-            tasks: [
-              { text: "MS Learn: <strong>Implement knowledge mining with Azure AI Search</strong> — indexing, skillsets, custom skills, semantic search", time: "6h", color: "var(--pink)" },
-              { text: "MS Learn: <strong>Document Intelligence & Vision solutions</strong> — custom models, prebuilt models, OCR pipelines", time: "4h", color: "var(--pink)" },
-              { text: "🎄 Account for holiday slowdown in late Dec — front-load this phase", time: "—", color: "var(--pink)" },
-            ]
-          }
-        ]
-      },
-      {
-        name: "December 2026 – January 2027",
-        tag: "Deep domains", tagColor: "rgba(244,114,182,0.12)", tagText: "var(--pink)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 5–6 (Dec 8–21)",
-            tasks: [
-              { text: "MS Learn: <strong>NLP solutions</strong> — Language Understanding, text analytics, translation, custom text classification, question answering", time: "8h", color: "var(--pink)" },
-              { text: "Hands-on: Build a multi-language FAQ bot using Language Service + Bot Framework", time: "3h", color: "var(--pink)" },
-            ]
-          },
-          {
-            label: "Week 7–8 (Dec 22 – Jan 4) — Holiday buffer",
-            tasks: [
-              { text: "Light study: Review notes, Anki flashcards, watch Pluralsight/YouTube AI-102 content during downtime", time: "4h/wk", color: "var(--pink)" },
-              { text: "Work on MotoHub side project: try adding an AI feature (maintenance prediction or smart reminders using Azure OpenAI)", time: "flex", color: "var(--pink)" },
-            ]
-          },
-          {
-            label: "Week 9–10 (Jan 5–18)",
-            tasks: [
-              { text: "MS Learn: <strong>Speech solutions</strong> — speech-to-text, text-to-speech, speech translation, custom speech models", time: "5h", color: "var(--pink)" },
-              { text: "MS Learn: <strong>Conversational AI</strong> — Bot Framework SDK, Power Virtual Agents, orchestration", time: "5h", color: "var(--pink)" },
-              { text: "<strong>DevSecOps + AI intersection</strong>: Study how to secure AI endpoints, manage API keys with Key Vault, rate limiting, prompt injection prevention", time: "3h", color: "var(--pink)" },
-            ]
-          }
-        ]
-      },
-      {
-        name: "February 2027",
-        tag: "Exam push", tagColor: "rgba(244,114,182,0.12)", tagText: "var(--pink)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 11 (Jan 19 – Feb 1)",
-            tasks: [
-              { text: "Practice exams: MeasureUp AI-102 — complete 2 full tests, build mistake log", time: "6h", color: "var(--pink)" },
-              { text: "Revisit: Azure OpenAI + AI Search scenarios (heavily tested), responsible AI implementation", time: "3h", color: "var(--pink)" },
-            ]
-          },
-          {
-            label: "Week 12 (Feb 2–8)",
-            tasks: [
-              { text: "Final review — mistake log, flashcards, one last practice test", time: "4h", color: "var(--pink)" },
-              { text: "<strong>🎯 EXAM DAY: AI-102</strong> — Schedule for Sat Feb 7 or weekday morning", time: "3h", color: "var(--pink)" },
-            ],
-            milestone: { text: "AI-102 ✓ — Azure AI Engineer Associate", bg: "rgba(244,114,182,0.08)", border: "rgba(244,114,182,0.2)", color: "var(--pink)" }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    title: "SC-100 — Cybersecurity Architect Expert",
-    dates: "Mar 2027 → Jun 2027 (14 weeks)",
-    icon: "🏛️",
-    iconBg: "rgba(34,211,238,0.12)",
-    iconBorder: "rgba(34,211,238,0.25)",
-    color: "var(--cyan)",
-    months: [
-      {
-        name: "March – April 2027",
-        tag: "Architecture thinking", tagColor: "rgba(34,211,238,0.12)", tagText: "var(--cyan)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 1–3 (Mar 1–21)",
-            tasks: [
-              { text: "MS Learn: <strong>Design Zero Trust strategy and architecture</strong> — this builds on everything you've learned. Focus on designing solutions, not just configuring them.", time: "10h", color: "var(--cyan)" },
-              { text: "MS Learn: <strong>Evaluate GRC technical strategies</strong> — regulatory compliance, privacy, risk assessment at architectural level", time: "5h", color: "var(--cyan)" },
-              { text: "Mindset shift: SC-100 is about <strong>recommending</strong> the right combination of services, not configuring them. Think like a consultant presenting to a CISO.", time: "—", color: "var(--cyan)" },
-            ]
-          },
-          {
-            label: "Week 4–6 (Mar 22 – Apr 11)",
-            tasks: [
-              { text: "MS Learn: <strong>Design security for infrastructure</strong> — hybrid/multi-cloud security architecture, network segmentation strategy, server & container security posture", time: "8h", color: "var(--cyan)" },
-              { text: "MS Learn: <strong>Design a strategy for data and applications</strong> — data classification architecture, app security patterns, API security", time: "6h", color: "var(--cyan)" },
-              { text: "Connect this back to your DevSecOps portfolio — your pipeline security patterns are SC-100 answers in practice", time: "2h", color: "var(--cyan)" },
-            ]
-          }
-        ]
-      },
-      {
-        name: "May – June 2027",
-        tag: "Expert level", tagColor: "rgba(34,211,238,0.12)", tagText: "var(--cyan)",
-        open: false,
-        weeks: [
-          {
-            label: "Week 7–9 (Apr 12 – May 2)",
-            tasks: [
-              { text: "MS Learn: <strong>Design security operations strategy</strong> — SOC design, Sentinel architecture at scale, SOAR playbooks, threat intelligence", time: "8h", color: "var(--cyan)" },
-              { text: "MS Learn: <strong>Design identity security strategy</strong> — Entra architecture decisions, governance, privileged access strategy", time: "6h", color: "var(--cyan)" },
-              { text: "Study <strong>Microsoft Cybersecurity Reference Architecture (MCRA)</strong> diagrams — SC-100 loves these", time: "3h", color: "var(--cyan)" },
-            ]
-          },
-          {
-            label: "Week 10–11 (May 3–16) — AI Security Deep Dive",
-            tasks: [
-              { text: "<strong>AI Security specialization</strong>: OWASP Top 10 for LLMs, securing Azure OpenAI deployments, AI red teaming concepts, model governance", time: "6h", color: "var(--cyan)" },
-              { text: "Design exercise: Draft an architecture for a secure AI-powered DevOps platform — combines everything you've learned", time: "3h", color: "var(--cyan)" },
-              { text: "Practice exams: Begin MeasureUp SC-100 — this exam has case studies, so practice reading scenarios carefully", time: "4h", color: "var(--cyan)" },
-            ]
-          },
-          {
-            label: "Week 12–13 (May 17–30)",
-            tasks: [
-              { text: "Practice exams: 2–3 more full tests. Focus on case study format — you'll get 1–2 case studies with 4–5 questions each", time: "6h", color: "var(--cyan)" },
-              { text: "Review MCRA, Zero Trust deployment guides, and Defender for Cloud architecture recommendations", time: "3h", color: "var(--cyan)" },
-            ]
-          },
-          {
-            label: "Week 14 (Jun 1–7)",
-            tasks: [
-              { text: "Final review — focus on architectural decision-making, not memorization", time: "3h", color: "var(--cyan)" },
-              { text: "<strong>🎯 EXAM DAY: SC-100</strong> — This is the capstone. You've earned it.", time: "3h", color: "var(--cyan)" },
-            ],
-            milestone: { text: "SC-100 ✓ — Cybersecurity Architect Expert 🏆", bg: "rgba(34,211,238,0.08)", border: "rgba(34,211,238,0.2)", color: "var(--cyan)" }
-          }
-        ]
-      }
-    ]
-  }
-];
+const P=[{title:"SC-900 — Security, Compliance & Identity Fundamentals",dates:"Apr 7 → May 11, 2026 (5 weeks)",icon:"🛡️",iBg:"rgba(52,211,153,.12)",iBor:"rgba(52,211,153,.25)",color:"var(--green)",desc:"Your gateway into the security world. Builds vocabulary across all four Microsoft security domains. ~30% is already familiar from AZ-104.",exam:{format:"45–50 questions",time:"45 minutes",passing:"700 / 1000",cost:"~$99 USD",prereq:"None",type:"Fundamentals"},months:[{name:"April 2026 (Remaining)",tag:"Foundation",tC:"rgba(52,211,153,.12)",tT:"var(--green)",open:true,weeks:[{label:"Week 1 · Apr 7–13",tasks:[{t:"study",text:"MS Learn: <strong>Describe security & compliance concepts</strong> — Zero Trust (3 principles), shared responsibility model, defense-in-depth, CIA triad, threat modeling",time:"6h"},{t:"lab",text:"Take the SC-900 practice quiz we built — identify cold spots across all 4 domains. Screenshot your results.",time:"1h"},{t:"review",text:"Create Anki flashcard deck for key terms (Zero Trust, RBAC, federation, AuthN vs AuthZ). You'll reuse this habit for every cert.",time:"1h"}],resources:[{label:"MS Learn: Security & Compliance Concepts",url:"https://learn.microsoft.com/en-us/training/paths/describe-concepts-of-security-compliance-identity/",tag:"FREE"},{label:"John Savill SC-900 Cram",url:"https://www.youtube.com/watch?v=Bz-8jM3jg-8",tag:"YouTube"},{label:"Anki Flashcard App",url:"https://apps.ankiweb.net/",tag:"FREE TOOL"}]},{label:"Week 2 · Apr 14–20",tasks:[{t:"study",text:"MS Learn: <strong>Describe Microsoft Entra capabilities</strong> — Conditional Access, PIM, SSPR, ID Protection, managed identities, External ID (B2B/B2C), Verified ID",time:"6h"},{t:"lab",text:"Set up a free M365 developer tenant. Configure a Conditional Access policy requiring MFA for risky sign-ins. Test SSPR.",time:"2h"},{t:"review",text:"Map Entra concepts to AZ-104 knowledge — RBAC, managed identities, service principals. Write a 1-page comparison note.",time:"1h"}],resources:[{label:"MS Learn: Entra Capabilities",url:"https://learn.microsoft.com/en-us/training/paths/describe-capabilities-of-microsoft-entra/",tag:"FREE"},{label:"Free M365 Developer Tenant",url:"https://developer.microsoft.com/en-us/microsoft-365/dev-program",tag:"FREE LAB"}]},{label:"Week 3 · Apr 21–27",tasks:[{t:"study",text:"MS Learn: <strong>Describe Microsoft security solutions</strong> — Sentinel (SIEM+SOAR), Defender suite (Endpoint, Identity, O365, Cloud, Cloud Apps), Secure Score, NSGs, Azure Firewall, DDoS Protection",time:"6h"},{t:"study",text:"MS Learn: <strong>Describe Microsoft compliance solutions</strong> — Purview (Compliance Manager, sensitivity labels, DLP, retention), eDiscovery, Insider Risk, Communication Compliance, Information Barriers, Priva, Customer Lockbox",time:"4h"}],resources:[{label:"MS Learn: Security Solutions",url:"https://learn.microsoft.com/en-us/training/paths/describe-capabilities-of-microsoft-security-solutions/",tag:"FREE"},{label:"MS Learn: Compliance Solutions",url:"https://learn.microsoft.com/en-us/training/paths/describe-capabilities-of-microsoft-compliance-solutions/",tag:"FREE"}]}]},{name:"May 2026 — Exam Sprint",tag:"Exam prep",tC:"rgba(52,211,153,.12)",tT:"var(--green)",open:false,weeks:[{label:"Week 4 · Apr 28 – May 4",tasks:[{t:"review",text:"Full review: all 4 domains. Focus on <strong>Compliance (Purview)</strong> — curveball domain for Azure people. Drill Priva, Customer Lockbox, Information Barriers.",time:"5h"},{t:"exam",text:"Practice exams: MeasureUp or Whizlabs SC-900 — 2 full tests. Aim 85%+. Build mistake log.",time:"4h"},{t:"review",text:"Re-take our SC-900 quiz. Compare to Week 1 results. Should see major Compliance domain improvement.",time:"1h"}],resources:[{label:"MeasureUp SC-900 Practice",url:"https://www.measureup.com/sc-900-microsoft-security-compliance-and-identity-fundamentals.html",tag:"PAID ~$99"},{label:"Whizlabs SC-900",url:"https://www.whizlabs.com/microsoft-azure-certification-sc-900/",tag:"PAID ~$20"}]},{label:"Week 5 · May 5–11",tasks:[{t:"review",text:"Light review — Anki deck, mistake log, no new material. Rest your brain.",time:"3h"},{t:"exam",text:"<strong>🎯 EXAM DAY: SC-900</strong> — Schedule Sat May 9 or weekday morning. Pearson VUE online or test center.",time:"2h"}],milestone:{text:"🎉 SC-900 ✓ — 4th Microsoft Certification!",bg:"rgba(52,211,153,.08)",border:"rgba(52,211,153,.2)",color:"var(--green)"},resources:[{label:"Schedule SC-900 Exam",url:"https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/",tag:"BOOK EXAM"}]}]}]},{title:"AZ-500 — Azure Security Engineer Associate",dates:"May 12 → Aug 9, 2026 (12 weeks)",icon:"🔐",iBg:"rgba(59,130,246,.12)",iBor:"rgba(59,130,246,.25)",color:"var(--blue)",desc:"Most critical cert for DevSecOps. Covers configuring identity, network, compute, data security + security operations. AZ-104 gives a 40% head start. Associate-level — expect hands-on config, not just concepts.",exam:{format:"40–60 questions + possible lab",time:"100 minutes",passing:"700 / 1000",cost:"~$165 USD",prereq:"AZ-104 recommended",type:"Associate"},months:[{name:"May 2026 (Post SC-900)",tag:"Identity & Network",tC:"rgba(59,130,246,.12)",tT:"var(--blue)",open:false,weeks:[{label:"Week 1–2 · May 12–25",tasks:[{t:"study",text:"MS Learn: <strong>Manage identity & access (25-30%)</strong> — Entra deep-dive, MFA enforcement, CA policy design (named locations, device compliance, risk-based), PIM role activation, app registrations & service principals",time:"10h"},{t:"lab",text:"Configure PIM with approval workflow. Build multi-condition CA policies (block legacy auth, require compliant device for admin portals). Use M365 dev tenant.",time:"3h"},{t:"review",text:"Key shift from SC-900: AZ-500 expects you to <strong>configure and troubleshoot</strong>, not describe. Every concept needs portal/CLI experience.",time:"—"}],resources:[{label:"MS Learn: Manage Identity & Access",url:"https://learn.microsoft.com/en-us/training/paths/manage-identity-access/",tag:"FREE"},{label:"AZ-500 GitHub Labs",url:"https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies",tag:"FREE LABS"}]},{label:"Week 3 · May 26 – Jun 1",tasks:[{t:"study",text:"MS Learn: <strong>Secure networking (20-25%)</strong> — NSGs & ASGs, Azure Firewall (DNAT/network/app rules), Front Door + WAF, Private Link & Service Endpoints, Bastion, VNet peering security",time:"6h"},{t:"lab",text:"Deploy hub-spoke VNet: NSG rules → Azure Firewall in hub → Bastion for mgmt → Private Endpoint for Storage. Your AZ-104 networking will accelerate this.",time:"4h"}],resources:[{label:"MS Learn: Secure Networking",url:"https://learn.microsoft.com/en-us/training/paths/secure-networking/",tag:"FREE"}]}]},{name:"June 2026",tag:"Compute & SecOps",tC:"rgba(59,130,246,.12)",tT:"var(--blue)",open:false,weeks:[{label:"Week 4–5 · Jun 1–15",tasks:[{t:"study",text:"MS Learn: <strong>Secure compute, storage & databases (20-25%)</strong> — VM security baselines, AKS security (pod identity, network policies), Key Vault (access policies vs RBAC, certs, rotation), Storage encryption (CMK), SQL security (TDE, auditing, dynamic data masking, vulnerability assessment)",time:"10h"},{t:"lab",text:"Configure Key Vault access policies, enable Defender for Storage, set up SQL auditing + vulnerability assessment, deploy Storage with Private Endpoint + CMK.",time:"3h"},{t:"project",text:"AZ-400 crossover: How would Key Vault integrate into YAML pipelines? How would image scanning fit container build stages? Start sketching for Phase 3.",time:"1h"}],resources:[{label:"MS Learn: Secure Compute/Storage/DB",url:"https://learn.microsoft.com/en-us/training/paths/secure-compute-storage-databases/",tag:"FREE"},{label:"Key Vault Best Practices",url:"https://learn.microsoft.com/en-us/azure/key-vault/general/best-practices",tag:"DOCS"}]},{label:"Week 6–7 · Jun 15–29",tasks:[{t:"study",text:"MS Learn: <strong>Manage security operations (25-30%)</strong> — Sentinel (workspace design, data connectors, analytics rules, workbooks, hunting), Defender for Cloud (CSPM, secure score, recommendations), Defender for Endpoint, Log Analytics",time:"10h"},{t:"lab",text:"Deploy Sentinel workspace: connect Azure Activity + Entra ID connectors, write 3–4 KQL queries (failed logins, suspicious IP, anomalous resource creation), create analytics rule + playbook.",time:"4h"},{t:"study",text:"KQL deep-dive: <strong>where, summarize, render, join, let</strong> statements. This skill carries into SC-100 and real-world SOC work.",time:"2h"}],resources:[{label:"MS Learn: Security Operations",url:"https://learn.microsoft.com/en-us/training/paths/manage-security-operation/",tag:"FREE"},{label:"KQL Quick Reference",url:"https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/kql-quick-reference",tag:"DOCS"},{label:"Sentinel Labs (GitHub)",url:"https://github.com/Azure/Azure-Sentinel/tree/master/Labs",tag:"FREE LABS"}]}]},{name:"July 2026",tag:"Review & buffer",tC:"rgba(59,130,246,.12)",tT:"var(--blue)",open:false,weeks:[{label:"Week 8–9 · Jun 30 – Jul 13",tasks:[{t:"review",text:"Revisit weakest domain — most people struggle with <strong>Secure Networking</strong> or <strong>Security Operations</strong>. Redo MS Learn sandbox labs for those areas.",time:"8h"},{t:"lab",text:"Complete ALL AZ-500 GitHub labs end-to-end. These simulate the exam environment.",time:"4h"},{t:"study",text:"Watch John Savill's AZ-500 Study Cram (3+ hours) — visual gap-filling before exam week.",time:"3h"}],resources:[{label:"John Savill AZ-500 Cram",url:"https://www.youtube.com/watch?v=6vISzj-z8k4",tag:"YouTube 3h+"}]},{label:"Week 10 · Jul 14–20 — BUFFER",tasks:[{t:"review",text:"Buffer for Deloitte crunches. If on track: start MeasureUp AZ-500 practice exams — aim 80%+.",time:"flex"},{t:"exam",text:"If comfortable: schedule AZ-500 for early August now. Booking creates healthy urgency.",time:"—"}]}]},{name:"August 2026 — Exam Sprint",tag:"Exam prep",tC:"rgba(59,130,246,.12)",tT:"var(--blue)",open:false,weeks:[{label:"Week 11 · Jul 21 – Aug 2",tasks:[{t:"exam",text:"Practice exams: 2–3 full MeasureUp tests. Review every wrong answer. Focus: Key Vault edge cases, Sentinel KQL, CA policy evaluation order, Defender for Cloud recs.",time:"6h"},{t:"review",text:"Drill: Key Vault (soft delete, purge protection), Sentinel playbooks, Defender regulatory compliance dashboards.",time:"4h"}],resources:[{label:"MeasureUp AZ-500 Practice",url:"https://www.measureup.com/az-500-microsoft-azure-security-technologies.html",tag:"PAID ~$99"}]},{label:"Week 12 · Aug 3–9",tasks:[{t:"review",text:"Light review — flashcards, mistake log, skim notes. Sleep well.",time:"3h"},{t:"exam",text:"<strong>🎯 EXAM DAY: AZ-500</strong> — Schedule Sat Aug 8 or weekday morning. Expect possible hands-on lab section.",time:"3h"}],milestone:{text:"🔐 AZ-500 ✓ — Azure Security Engineer Associate!",bg:"rgba(59,130,246,.08)",border:"rgba(59,130,246,.2)",color:"var(--blue)"},resources:[{label:"Schedule AZ-500 Exam",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-security-engineer/",tag:"BOOK EXAM"}]}]}]},{title:"Hands-on DevSecOps Portfolio",dates:"Aug 11 → Oct 5, 2026 (8 weeks)",icon:"⚙️",iBg:"rgba(251,146,60,.12)",iBor:"rgba(251,146,60,.25)",color:"var(--orange)",desc:"No exam — pure skill building. Integrate security into CI/CD pipelines, scan IaC, secure containers, and build a GitHub portfolio. Theory becomes practice. Build Deloitte-reusable accelerators.",exam:{format:"No exam",time:"Self-paced",passing:"Portfolio complete",cost:"Free (tool free tiers)",prereq:"AZ-400 + AZ-500",type:"Hands-on"},months:[{name:"Aug – Sep 2026",tag:"Pipelines & IaC",tC:"rgba(251,146,60,.12)",tT:"var(--orange)",open:false,weeks:[{label:"Week 1–2 · Aug 11–24 — Pipeline Security",tasks:[{t:"project",text:"<strong>Integrate security into Azure DevOps YAML:</strong> SAST (SonarQube/Checkmarx), dependency scanning (Snyk/WhiteSource), secret scanning. Quality gates that fail builds on critical findings.",time:"8h"},{t:"project",text:"Extend your Salesforce CLI Scanner integration — add fail-on-severity thresholds and PR decoration with inline scan result comments.",time:"3h"},{t:"lab",text:"Key Vault in pipelines: variable groups linked to Key Vault, zero hardcoded secrets, rotation policy.",time:"2h"}],resources:[{label:"SonarQube ADO Extension",url:"https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarqube",tag:"FREE TIER"},{label:"Snyk Azure Pipelines",url:"https://docs.snyk.io/integrations/ci-cd-integrations/azure-pipelines-integration",tag:"FREE TIER"},{label:"Key Vault in Pipelines",url:"https://learn.microsoft.com/en-us/azure/devops/pipelines/release/azure-key-vault",tag:"DOCS"}]},{label:"Week 3–4 · Aug 25 – Sep 7 — IaC Security",tasks:[{t:"project",text:"Learn <strong>Checkov</strong> and <strong>Trivy</strong> for Bicep/Terraform scanning. Pre-commit hooks + CI stages. Custom policies for org security baseline.",time:"6h"},{t:"project",text:"Build reference pipeline: Bicep → Checkov scan → approval gate → staging deploy → OWASP ZAP DAST → production. Your crown jewel template.",time:"4h"},{t:"project",text:"Document as reusable ADO pipeline template with README. This becomes a Deloitte accelerator for client engagements.",time:"2h"}],resources:[{label:"Checkov (Bridgecrew)",url:"https://www.checkov.io/",tag:"OPEN SOURCE"},{label:"Trivy IaC Scanning",url:"https://aquasecurity.github.io/trivy/latest/docs/scanner/misconfiguration/",tag:"OPEN SOURCE"},{label:"OWASP ZAP",url:"https://www.zaproxy.org/",tag:"OPEN SOURCE"}]}]},{name:"Sep – Oct 2026",tag:"Containers & ship",tC:"rgba(251,146,60,.12)",tT:"var(--orange)",open:false,weeks:[{label:"Week 5–6 · Sep 8–21 — Container Security",tasks:[{t:"project",text:"<strong>Defender for Containers</strong> + <strong>Trivy</strong> for ACR image scanning. Vulnerability databases, base image hygiene.",time:"5h"},{t:"project",text:"Secure AKS pipeline: image build → Trivy scan → Notary v2 signing → deploy with Azure Policy/Gatekeeper admission controllers blocking unsigned/vulnerable images.",time:"5h"},{t:"study",text:"Explore <strong>GitHub Advanced Security</strong> — CodeQL, secret scanning with push protection, dependency review in GitHub Actions.",time:"3h"}],resources:[{label:"Defender for Containers",url:"https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction",tag:"DOCS"},{label:"GitHub Advanced Security",url:"https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security",tag:"DOCS"},{label:"Notary Project",url:"https://notaryproject.dev/",tag:"OPEN SOURCE"}]},{label:"Week 7–8 · Sep 22 – Oct 5 — Portfolio & Visibility",tasks:[{t:"project",text:"Create <strong>public GitHub portfolio repo</strong>: secure YAML templates, IaC scanning configs, container security pipeline, architecture diagrams, README.",time:"4h"},{t:"project",text:"Write LinkedIn article: <strong>\"Shifting Security Left in Azure DevOps\"</strong>. Share pipeline security patterns. Tag Deloitte. Great for visibility.",time:"3h"},{t:"study",text:"Optional: <strong>GitHub Advanced Security Certification</strong> if you found the tooling compelling. Relatively new, strong differentiator.",time:"flex"}],milestone:{text:"⚙️ DevSecOps Portfolio Complete — Real skills + public proof of work",bg:"rgba(251,146,60,.08)",border:"rgba(251,146,60,.2)",color:"var(--orange)"},resources:[{label:"GitHub Certifications",url:"https://resources.github.com/learn/certifications/",tag:"OPTIONAL"}]}]}]},{title:"AI-900 — Azure AI Fundamentals",dates:"Oct 6 → Nov 8, 2026 (4–5 weeks)",icon:"🤖",iBg:"rgba(167,139,250,.12)",iBor:"rgba(167,139,250,.25)",color:"var(--purple)",desc:"Quick fundamentals cert for AI vocabulary and concepts. Should feel light after AZ-500. Establishes baseline AI literacy before AI-102.",exam:{format:"40–60 questions",time:"45 minutes",passing:"700 / 1000",cost:"~$99 USD",prereq:"None",type:"Fundamentals"},months:[{name:"October 2026",tag:"AI basics",tC:"rgba(167,139,250,.12)",tT:"var(--purple)",open:false,weeks:[{label:"Week 1 · Oct 6–12",tasks:[{t:"study",text:"MS Learn: <strong>AI workloads & considerations</strong> — ML vs traditional programming, anomaly detection, computer vision, NLP, generative AI fundamentals, responsible AI overview",time:"5h"},{t:"study",text:"MS Learn: <strong>ML fundamentals</strong> — regression, classification, clustering, deep learning basics, training/validation/test, overfitting",time:"3h"}],resources:[{label:"MS Learn: AI Fundamentals Path",url:"https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/",tag:"FREE"},{label:"AI-900 Exam Page",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/",tag:"STUDY GUIDE"}]},{label:"Week 2 · Oct 13–19",tasks:[{t:"study",text:"MS Learn: <strong>Azure AI services</strong> — Azure OpenAI, AI Services (Vision, Speech, Language, Decision), Azure ML workspace, Document Intelligence, AI Search basics",time:"6h"},{t:"lab",text:"Deploy Azure OpenAI resource, try chat completion. Test Computer Vision API. Play with Language service entity recognition.",time:"2h"}],resources:[{label:"Azure OpenAI Quickstart",url:"https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart",tag:"FREE"},{label:"AI Services Demos",url:"https://azure.microsoft.com/en-us/products/ai-services/",tag:"TRY FREE"}]},{label:"Week 3 · Oct 20–26",tasks:[{t:"study",text:"MS Learn: <strong>Responsible AI</strong> — fairness, reliability, privacy, inclusiveness, transparency, accountability. Microsoft's framework + Responsible AI dashboard.",time:"3h"},{t:"study",text:"MS Learn: <strong>Generative AI fundamentals</strong> — LLMs, prompt engineering basics, grounding, RAG conceptually, Azure AI Foundry overview",time:"3h"},{t:"exam",text:"Practice exams: 2 tests, aim 85%+. Fundamentals exam = lighter prep needed.",time:"2h"}],resources:[{label:"MS Learn: Responsible AI",url:"https://learn.microsoft.com/en-us/training/paths/responsible-ai-business-principles/",tag:"FREE"}]}]},{name:"November 2026",tag:"Exam",tC:"rgba(167,139,250,.12)",tT:"var(--purple)",open:false,weeks:[{label:"Week 4 · Oct 27 – Nov 2",tasks:[{t:"review",text:"Quick review — Anki flashcards, Responsible AI principles (frequently tested), generative AI concepts.",time:"3h"},{t:"exam",text:"Re-take practice test. 85%+ = ready. Otherwise focus remaining days on weak spots.",time:"1h"}]},{label:"Week 5 · Nov 3–8",tasks:[{t:"review",text:"Light skim. No new material. Trust your prep.",time:"1h"},{t:"exam",text:"<strong>🎯 EXAM DAY: AI-900</strong> — Light after AZ-500. Schedule Sat Nov 7 or weekday AM.",time:"2h"}],milestone:{text:"🤖 AI-900 ✓ — Azure AI Fundamentals!",bg:"rgba(167,139,250,.08)",border:"rgba(167,139,250,.2)",color:"var(--purple)"},resources:[{label:"Schedule AI-900",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/",tag:"BOOK EXAM"}]}]}]},{title:"AI-102 — Azure AI Engineer Associate",dates:"Nov 10, 2026 → Feb 8, 2027 (12 weeks)",icon:"🧠",iBg:"rgba(244,114,182,.12)",iBor:"rgba(244,114,182,.25)",color:"var(--pink)",desc:"Deep AI cert. Build production solutions with Azure OpenAI, AI Search, Document Intelligence, NLP, Speech, Conversational AI. Become an engineer who can build AI features AND secure them.",exam:{format:"40–60 questions",time:"100 minutes",passing:"700 / 1000",cost:"~$165 USD",prereq:"AI-900 recommended",type:"Associate"},months:[{name:"November 2026",tag:"OpenAI & Search",tC:"rgba(244,114,182,.12)",tT:"var(--pink)",open:false,weeks:[{label:"Week 1–2 · Nov 10–23",tasks:[{t:"study",text:"MS Learn: <strong>Plan & manage Azure AI solutions</strong> — architecture, responsible AI in production, resource provisioning, monitoring, cost management",time:"6h"},{t:"study",text:"MS Learn: <strong>Azure OpenAI (heavily tested)</strong> — prompt engineering, system messages, temperature/top_p, fine-tuning, embeddings, RAG with AI Search",time:"6h"},{t:"lab",text:"Build RAG chatbot: Azure OpenAI + AI Search indexing your own docs. #1 hot skill in market. Use MotoHub docs or sample data.",time:"4h"}],resources:[{label:"MS Learn: AI Engineer Path",url:"https://learn.microsoft.com/en-us/training/paths/prepare-for-ai-engineering/",tag:"FREE"},{label:"Azure OpenAI RAG Tutorial",url:"https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart",tag:"FREE"},{label:"AI-102 Exam Page",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/",tag:"STUDY GUIDE"}]},{label:"Week 3–4 · Nov 24 – Dec 7",tasks:[{t:"study",text:"MS Learn: <strong>AI Search deep-dive</strong> — indexers, skillsets, built-in & custom skills, knowledge stores, semantic ranking, vector search, hybrid search",time:"6h"},{t:"study",text:"MS Learn: <strong>Document Intelligence & Vision</strong> — prebuilt models (invoice, receipt, ID), custom models, OCR, Image Analysis API, custom vision",time:"4h"},{t:"review",text:"🎄 Holiday approaching — front-load this phase. Finish these domains by Dec 15.",time:"—"}],resources:[{label:"AI Search Skills Reference",url:"https://learn.microsoft.com/en-us/azure/search/cognitive-search-predefined-skills",tag:"DOCS"},{label:"Document Intelligence Studio",url:"https://formrecognizer.appliedai.azure.com/studio",tag:"FREE LAB"}]}]},{name:"Dec 2026 – Jan 2027",tag:"NLP & Speech",tC:"rgba(244,114,182,.12)",tT:"var(--pink)",open:false,weeks:[{label:"Week 5–6 · Dec 8–21",tasks:[{t:"study",text:"MS Learn: <strong>NLP solutions</strong> — Language service (entity recognition, key phrases, sentiment, PII), custom text classification, custom NER, question answering, CLU",time:"8h"},{t:"lab",text:"Build multi-language FAQ bot: Language Service question answering + Bot Framework. Deploy to App Service.",time:"3h"}],resources:[{label:"Language Service Docs",url:"https://learn.microsoft.com/en-us/azure/ai-services/language-service/",tag:"DOCS"},{label:"Bot Framework SDK",url:"https://learn.microsoft.com/en-us/azure/bot-service/bot-service-overview",tag:"DOCS"}]},{label:"Week 7–8 · Dec 22 – Jan 4 — HOLIDAY BUFFER",tasks:[{t:"review",text:"Light study: Anki flashcards, YouTube/Pluralsight AI-102 content during downtime. No pressure — this is buffer.",time:"4h/wk"},{t:"project",text:"Fun: Add AI feature to MotoHub — maintenance prediction using Azure OpenAI or smart service reminders. Practical learning + portfolio.",time:"flex"}]},{label:"Week 9–10 · Jan 5–18",tasks:[{t:"study",text:"MS Learn: <strong>Speech solutions</strong> — speech-to-text, text-to-speech, speech translation, custom speech, pronunciation assessment",time:"5h"},{t:"study",text:"MS Learn: <strong>Conversational AI</strong> — Bot Framework SDK, adaptive dialogs, Copilot Studio, orchestration between CLU and QnA",time:"5h"},{t:"study",text:"<strong>DevSecOps + AI intersection</strong>: Secure AI endpoints (Key Vault, managed identity), rate limiting, content filtering, prompt injection prevention, Azure AI Content Safety. YOUR differentiator.",time:"3h"}],resources:[{label:"Speech Service Docs",url:"https://learn.microsoft.com/en-us/azure/ai-services/speech-service/",tag:"DOCS"},{label:"OWASP Top 10 for LLMs",url:"https://owasp.org/www-project-top-10-for-large-language-model-applications/",tag:"CRITICAL"},{label:"Azure AI Content Safety",url:"https://learn.microsoft.com/en-us/azure/ai-services/content-safety/",tag:"DOCS"}]}]},{name:"February 2027",tag:"Exam",tC:"rgba(244,114,182,.12)",tT:"var(--pink)",open:false,weeks:[{label:"Week 11 · Jan 19 – Feb 1",tasks:[{t:"exam",text:"Practice exams: MeasureUp AI-102 — 2 full tests. OpenAI + AI Search heavily tested. Drill RAG architecture, indexer config, responsible AI.",time:"6h"},{t:"review",text:"Weak area revision. Common gaps: AI Search skillset config, custom skill integration, speech SDK vs REST.",time:"3h"}],resources:[{label:"MeasureUp AI-102 Practice",url:"https://www.measureup.com/ai-102-designing-and-implementing-a-microsoft-azure-ai-solution.html",tag:"PAID ~$99"}]},{label:"Week 12 · Feb 2–8",tasks:[{t:"review",text:"Final review — mistake log, flashcards, one last practice test.",time:"4h"},{t:"exam",text:"<strong>🎯 EXAM DAY: AI-102</strong> — Schedule Sat Feb 7 or weekday AM.",time:"3h"}],milestone:{text:"🧠 AI-102 ✓ — Azure AI Engineer Associate! Build AND secure AI.",bg:"rgba(244,114,182,.08)",border:"rgba(244,114,182,.2)",color:"var(--pink)"},resources:[{label:"Schedule AI-102",url:"https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/",tag:"BOOK EXAM"}]}]}]},{title:"SC-100 — Cybersecurity Architect Expert",dates:"Feb 17 → Jun 7, 2027 (16 weeks)",icon:"🏛️",iBg:"rgba(34,211,238,.12)",iBor:"rgba(34,211,238,.25)",color:"var(--cyan)",desc:"The capstone Expert-level exam. Design security architectures, not configure them. Think like a consultant presenting to a CISO. Everything converges: identity, networking, compliance, AI, DevSecOps. Prerequisite: AZ-500.",exam:{format:"40–60 questions + case studies",time:"120 minutes",passing:"700 / 1000",cost:"~$165 USD",prereq:"AZ-500 (completed)",type:"Expert"},months:[{name:"Feb – Apr 2027",tag:"Architecture",tC:"rgba(34,211,238,.12)",tT:"var(--cyan)",open:false,weeks:[{label:"Week 1–3 · Feb 17 – Mar 9",tasks:[{t:"study",text:"MS Learn: <strong>Design Zero Trust strategy & architecture</strong> — Rapid Modernization Plan, identity architecture, network architecture, endpoint strategy. DESIGN, don't configure.",time:"10h"},{t:"study",text:"MS Learn: <strong>Evaluate GRC technical strategies</strong> — compliance architecture, privacy design, risk frameworks, security benchmarks at org level",time:"5h"},{t:"review",text:"Mindset shift: SC-100 = \"which services should you recommend?\" not \"how to configure.\" Think consultant → CISO. Deloitte experience helps.",time:"—"}],resources:[{label:"MS Learn: SC-100 Full Path",url:"https://learn.microsoft.com/en-us/training/paths/sc-100-design-solutions-align-cloud-security-strategy/",tag:"FREE"},{label:"SC-100 Exam Page",url:"https://learn.microsoft.com/en-us/credentials/certifications/cybersecurity-architect-expert/",tag:"STUDY GUIDE"},{label:"MCRA (Reference Architecture)",url:"https://learn.microsoft.com/en-us/security/adoption/mcra",tag:"CRITICAL"}]},{label:"Week 4–6 · Mar 10–30",tasks:[{t:"study",text:"MS Learn: <strong>Design security for infrastructure</strong> — hybrid/multi-cloud architecture, network segmentation, server & container posture management, IoT/OT security",time:"8h"},{t:"study",text:"MS Learn: <strong>Design for data & applications</strong> — data classification architecture, sovereignty, app security (OWASP), API security, enterprise DevSecOps strategy",time:"6h"},{t:"project",text:"Connect to your Phase 3 portfolio — your pipeline security patterns are SC-100 answers in practice. Review through architecture lens.",time:"2h"}],resources:[{label:"Zero Trust Deployment Guide",url:"https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",tag:"DOCS"}]},{label:"Week 7–9 · Mar 31 – Apr 20",tasks:[{t:"study",text:"MS Learn: <strong>Security operations strategy</strong> — SOC design & maturity, Sentinel at enterprise scale, SOAR playbook strategy, threat intelligence, SecOps KPIs",time:"8h"},{t:"study",text:"MS Learn: <strong>Identity security strategy</strong> — Entra architecture for large orgs, identity governance (access reviews, entitlement mgmt, lifecycle workflows), privileged access strategy",time:"6h"},{t:"study",text:"Study <strong>MCRA diagrams</strong> thoroughly — SC-100 loves \"which component goes where?\" questions. Download and annotate the PDF.",time:"3h"}],resources:[{label:"Sentinel Best Practices",url:"https://learn.microsoft.com/en-us/azure/sentinel/best-practices",tag:"DOCS"},{label:"Identity Governance",url:"https://learn.microsoft.com/en-us/entra/id-governance/",tag:"DOCS"}]}]},{name:"May – Jun 2027",tag:"Expert + Exam",tC:"rgba(34,211,238,.12)",tT:"var(--cyan)",open:false,weeks:[{label:"Week 10–11 · Apr 21 – May 4 — AI Security",tasks:[{t:"study",text:"<strong>AI Security deep-dive</strong>: OWASP Top 10 for LLMs (full), securing Azure OpenAI (networking, RBAC, content filters, monitoring), AI red teaming, model governance, data poisoning prevention",time:"6h"},{t:"project",text:"Capstone design: Architecture for <strong>secure AI-powered DevOps platform</strong> — identity, networking, data flow, monitoring, compliance. Everything from all 6 phases.",time:"3h"},{t:"exam",text:"Begin MeasureUp SC-100 — case study format (1–2 case studies, 4–5 questions each). Practice reading long scenarios.",time:"4h"}],resources:[{label:"OWASP Top 10 for LLMs",url:"https://owasp.org/www-project-top-10-for-large-language-model-applications/",tag:"CRITICAL"},{label:"Azure OpenAI Security",url:"https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity",tag:"DOCS"},{label:"MeasureUp SC-100",url:"https://www.measureup.com/sc-100-microsoft-cybersecurity-architect.html",tag:"PAID ~$99"}]},{label:"Week 12–13 · May 5–18",tasks:[{t:"exam",text:"2–3 more full practice tests. Case study timing — manage 120 min carefully. Case studies appear first, can't go back.",time:"6h"},{t:"review",text:"Final MCRA review. Zero Trust deployment guides. Defender for Cloud architecture recs.",time:"3h"}]},{label:"Week 14 · May 19–25 — BUFFER",tasks:[{t:"review",text:"Buffer week. Catch up or rest. Review mistake log if on track.",time:"flex"}]},{label:"Week 15–16 · May 26 – Jun 7",tasks:[{t:"review",text:"Final review — architectural decision patterns. \"When X over Y?\" Trust your judgment.",time:"3h"},{t:"exam",text:"<strong>🎯 EXAM DAY: SC-100</strong> — The capstone. Schedule Sat Jun 7. Walk in confident. 🏆",time:"3h"}],milestone:{text:"🏛️ SC-100 ✓ — Cybersecurity Architect Expert! 8× Microsoft Certified. 🏆",bg:"rgba(34,211,238,.08)",border:"rgba(34,211,238,.2)",color:"var(--cyan)"},resources:[{label:"Schedule SC-100",url:"https://learn.microsoft.com/en-us/credentials/certifications/cybersecurity-architect-expert/",tag:"BOOK EXAM"}]}]}]}];
 
-let activePhase = 0;
-const openMonths = {};
-
-function showPhase(idx) {
-  activePhase = idx;
-  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===idx));
-  renderPhases();
-}
-
-function toggleMonth(phaseIdx, monthIdx) {
-  const key = `${phaseIdx}-${monthIdx}`;
-  openMonths[key] = !openMonths[key];
-  renderPhases();
-}
-
-function renderPhases() {
-  const phase = PHASES[activePhase];
-  let html = `
-    <div class="phase">
-      <div class="phase-header">
-        <div class="phase-icon" style="background:${phase.iconBg};border:1px solid ${phase.iconBorder}">${phase.icon}</div>
-        <div class="phase-meta">
-          <div class="phase-title">${phase.title}</div>
-          <div class="phase-dates">${phase.dates}</div>
-        </div>
-      </div>`;
-
-  phase.months.forEach((month, mi) => {
-    const key = `${activePhase}-${mi}`;
-    // Default first month of first phase to open
-    if (openMonths[key] === undefined) openMonths[key] = month.open || false;
-    const isOpen = openMonths[key];
-
-    html += `
-      <div class="month-block">
-        <div class="month-header" onclick="toggleMonth(${activePhase},${mi})">
-          <div class="month-name">
-            ${month.name}
-            <span class="m-tag" style="background:${month.tagColor};color:${month.tagText}">${month.tag}</span>
-          </div>
-          <span class="month-toggle ${isOpen?'open':''}">▾</span>
-        </div>
-        <div class="month-body ${isOpen?'open':''}">`;
-
-    month.weeks.forEach(week => {
-      html += `<div class="week"><div class="week-label">${week.label}</div>`;
-      week.tasks.forEach(task => {
-        html += `
-          <div class="task">
-            <span class="bullet" style="background:${task.color}"></span>
-            <span>${task.text}</span>
-            ${task.time !== '—' ? `<span class="time-hint">${task.time}</span>` : ''}
-          </div>`;
-      });
-      if (week.milestone) {
-        html += `<div class="milestone" style="background:${week.milestone.bg};border:1px solid ${week.milestone.border};color:${week.milestone.color}">${week.milestone.text}</div>`;
-      }
-      html += `</div>`;
-    });
-
-    html += `</div></div>`;
-  });
-
-  html += `</div>`;
-  document.getElementById('phases').innerHTML = html;
-}
-
-renderPhases();
+const LS_KEY='roadmap-v2';let checked={};try{checked=JSON.parse(localStorage.getItem(LS_KEY))||{}}catch(e){checked={}}
+function saveChecked(){try{localStorage.setItem(LS_KEY,JSON.stringify(checked))}catch(e){}}
+let activePhase=0;const openMonths={};
+function getTotalTasks(){let n=0;P.forEach(p=>p.months.forEach(m=>m.weeks.forEach(w=>n+=w.tasks.length)));return n}
+function getCheckedCount(){return Object.values(checked).filter(Boolean).length}
+function getPhaseProgress(pi){let t=0,d=0;P[pi].months.forEach((m,mi)=>m.weeks.forEach((w,wi)=>w.tasks.forEach((_,ti)=>{t++;if(checked[`${pi}-${mi}-${wi}-${ti}`])d++})));return t?Math.round(d/t*100):0}
+function getMonthProgress(pi,mi){let t=0,d=0;P[pi].months[mi].weeks.forEach((w,wi)=>w.tasks.forEach((_,ti)=>{t++;if(checked[`${pi}-${mi}-${wi}-${ti}`])d++}));return{done:d,total:t}}
+function updateProgress(){const t=getTotalTasks(),d=getCheckedCount(),p=t?Math.round(d/t*100):0;document.getElementById('progress-pct').textContent=p+'%';document.getElementById('progress-bar').style.width=p+'%';document.getElementById('phase-pills').innerHTML=P.map((ph,i)=>{const pp=getPhaseProgress(i);return`<span class="po-phase ${pp===100?'done':i===activePhase?'current':''}">${ph.icon} ${pp}%</span>`}).join('')}
+function renderTabs(){document.getElementById('tabs').innerHTML=P.map((ph,i)=>`<button class="tab ${i===activePhase?'active':''}" onclick="showPhase(${i})">${ph.icon} Phase ${i+1}</button>`).join('')}
+function showPhase(i){activePhase=i;renderTabs();renderPhase();updateProgress()}
+function toggleMonth(pi,mi){const k=`${pi}-${mi}`;openMonths[k]=!openMonths[k];renderPhase()}
+function toggleCheck(pi,mi,wi,ti){const k=`${pi}-${mi}-${wi}-${ti}`;checked[k]=!checked[k];saveChecked();renderPhase();updateProgress()}
+function expandAll(){P[activePhase].months.forEach((_,mi)=>openMonths[`${activePhase}-${mi}`]=true);renderPhase()}
+function collapseAll(){P[activePhase].months.forEach((_,mi)=>openMonths[`${activePhase}-${mi}`]=false);renderPhase()}
+function resetProgress(){if(confirm('Reset all progress? This clears all checkboxes.')){checked={};saveChecked();renderPhase();updateProgress()}}
+function renderPhase(){const ph=P[activePhase];const tL={study:'STUDY',lab:'LAB',exam:'EXAM',project:'PROJECT',review:'REVIEW'};const tC={study:'t-study',lab:'t-lab',exam:'t-exam',project:'t-project',review:'t-review'};let h=`<div class="phase"><div class="phase-header"><div class="phase-icon" style="background:${ph.iBg};border:1px solid ${ph.iBor}">${ph.icon}</div><div class="phase-meta"><div class="p-title">${ph.title}</div><div class="p-dates">${ph.dates}</div><div class="p-desc">${ph.desc}</div></div></div>`;if(ph.exam){h+='<div class="exam-info">';const labels={format:'Format',time:'Time Limit',passing:'Passing Score',cost:'Cost',prereq:'Prerequisites',type:'Level'};Object.entries(ph.exam).forEach(([k,v])=>{h+=`<div class="ei-card"><div class="ei-label">${labels[k]||k}</div><div class="ei-val">${v}</div></div>`});h+='</div>'}h+='<div class="controls"><button class="ctrl-btn" onclick="expandAll()">Expand All</button><button class="ctrl-btn" onclick="collapseAll()">Collapse All</button></div>';ph.months.forEach((m,mi)=>{const k=`${activePhase}-${mi}`;if(openMonths[k]===undefined)openMonths[k]=m.open||false;const isOpen=openMonths[k];const mp=getMonthProgress(activePhase,mi);h+=`<div class="month-block"><div class="month-header" onclick="toggleMonth(${activePhase},${mi})"><div class="month-name">${m.name}<span class="m-tag" style="background:${m.tC};color:${m.tT}">${m.tag}</span></div><div class="m-right"><span class="m-progress">${mp.done}/${mp.total}</span><span class="month-toggle ${isOpen?'open':''}">▾</span></div></div><div class="month-body ${isOpen?'open':''}">`;m.weeks.forEach((w,wi)=>{h+=`<div class="week"><div class="week-label">${w.label}</div>`;w.tasks.forEach((task,ti)=>{const ck=`${activePhase}-${mi}-${wi}-${ti}`;const isDone=checked[ck];h+=`<div class="task ${isDone?'completed':''}"><div class="chk ${isDone?'checked':''}" onclick="event.stopPropagation();toggleCheck(${activePhase},${mi},${wi},${ti})"></div><div class="t-content"><span class="t-type ${tC[task.t]}">${tL[task.t]}</span>${task.text}</div>${task.time&&task.time!=='—'&&task.time!=='flex'?`<span class="t-time">${task.time}</span>`:''}</div>`});if(w.milestone)h+=`<div class="milestone" style="background:${w.milestone.bg};border:1px solid ${w.milestone.border};color:${w.milestone.color}">${w.milestone.text}</div>`;if(w.resources){h+='<div class="resources"><div class="r-title">📎 Resources</div>';w.resources.forEach(r=>{h+=`<div class="r-link"><a href="${r.url}" target="_blank" rel="noopener">${r.label}</a> <span class="r-tag">${r.tag}</span></div>`});h+='</div>'}h+='</div>'});h+='</div></div>'});h+='</div>';document.getElementById('phases').innerHTML=h}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)});
+renderTabs();renderPhase();updateProgress();
 </script>
 </body>
 </html>
